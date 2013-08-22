@@ -24,5 +24,4 @@ public class MainGame extends BasicGame
 		g.drawString("Howdy!", 110, 110);
 	}
 
-
 }

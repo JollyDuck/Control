@@ -17,5 +17,6 @@ public class MinionManage {
         // TODO code application logic here
         System.out.println("Hi.");
         System.out.println("Testing Git uploading.");
+
     }
 }

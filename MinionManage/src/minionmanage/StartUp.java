@@ -21,7 +21,7 @@ public class StartUp {
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new MainGame("Simple Slick Game"));
 			appgc.setDisplayMode(640, 480, false);
-                        appgc.setTargetFrameRate(120);
+                        appgc.setVSync(true);
 			appgc.start();
 		}
 		catch (SlickException ex)

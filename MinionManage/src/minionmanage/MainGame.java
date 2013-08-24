@@ -1,6 +1,7 @@
 package minionmanage;
 
 import org.newdawn.slick.BasicGame;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
@@ -26,10 +27,15 @@ public class MainGame extends BasicGame {
         if (input.isKeyPressed(Input.KEY_1)){
             minionManager.assignWork(1);
         }
+        
+        minionManager.updateMinions(i);
     }
 
     @Override
     public void render(GameContainer gc, Graphics g) throws SlickException {
+        g.setColor(Color.black);
+        g.fillRect(0, 0, 640, 480);
+        g.setColor(Color.white);
         g.drawString("Howdy!", 110, 110);
         g.drawRect(50, 50, 50, 50);
         g.drawRect(150, 50, 50, 50);

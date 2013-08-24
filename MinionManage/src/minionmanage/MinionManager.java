@@ -45,7 +45,7 @@ public class MinionManager {
 
     public void updateMinions(float delta) {
         for (int i = 0; i < minions.length; i++) {
-            minions[i].update(delta);
+            minions[i].update(delta / 1000);
         }
     }
 
@@ -54,7 +54,7 @@ public class MinionManager {
         int b = 0;
         int c = 0;
         for (int i = 0; i < minions.length; i++) {
-            switch (Integer.parseInt(Float.toString(minions[i].position.x))) {
+            switch ((int) minions[i].position.x) {
                 case 0:
                     a++;
                     break;
@@ -65,10 +65,14 @@ public class MinionManager {
                     c++;
                     break;
             }
-            g.drawString(Integer.toString(b), 50, 50);
-            g.drawString(Integer.toString(a), 150, 50);
-            g.drawString(Integer.toString(c), 250, 50);
-            g.drawString("Oli Paintball", 200, 250);
         }
+        g.drawString(Integer.toString(a), 50, 50);
+        g.drawString(Integer.toString(b), 150, 50);
+        g.drawString(Integer.toString(c), 250, 50);
+        g.drawString(Float.toString(minions[1].workingForThisLong), 250, 250);
+
+        a = 0;
+        b = 0;
+        c = 0;
     }
 }

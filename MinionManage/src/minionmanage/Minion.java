@@ -16,11 +16,19 @@ public class Minion extends Actor {
 
     public Minion() {
         workType = 0;
-        workingForThisLong = 0f;
+        workingForThisLong = 0;
+        initiate(); // from Actor
     }
 
     public void update(float delta) {
-        workingForThisLong += delta;
+        if (workType != 0) {
+            workingForThisLong += delta;
+        }
+        if ((int) workingForThisLong >= 5) {
+            workType = 0;
+            workingForThisLong=0;
+        }
+        updatePosition();
     }
 
     public void updatePosition() {

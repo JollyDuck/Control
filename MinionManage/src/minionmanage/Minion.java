@@ -4,16 +4,36 @@
  */
 package minionmanage;
 
-import org.lwjgl.util.vector.Vector2f;
-import org.newdawn.slick.Image;
-
 /**
  *
  * @author James
  */
-public class Minion implements Actor {
+public class Minion extends Actor {
 
-    @Override
-    public void method(Image myImage, Vector2f myVector) {
+    //Work type = 0 == idle.
+    int workType;
+    float workingForThisLong;
+
+    public Minion() {
+        workType = 0;
+        workingForThisLong = 0f;
+    }
+
+    public void update(float delta) {
+        workingForThisLong += delta;
+    }
+
+    public void updatePosition() {
+        switch (workType) {
+            default:
+                position.x = 1;
+                break;
+            case 1:
+                position.x = 0;
+                break;
+            case 2:
+                position.x = 2;
+                break;
+        }
     }
 }

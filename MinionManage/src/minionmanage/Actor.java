@@ -11,7 +11,11 @@ import org.newdawn.slick.Image;
  *
  * @author James
  */
-public interface Actor {
+public abstract class Actor {
+    Vector2f position;
     
-    public void method(Image myImage, Vector2f myVector);
+    public void initiate(){
+        position.x=1;
+    }
+    //public abstract void method(Image myImage, Vector2f myVector);
 }

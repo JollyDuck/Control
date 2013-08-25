@@ -8,7 +8,7 @@ import org.newdawn.slick.Graphics;
 
 /**
  *
- * @author dad
+ * @author James
  */
 public class MinionManager {
 

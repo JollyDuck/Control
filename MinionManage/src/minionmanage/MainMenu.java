@@ -13,10 +13,11 @@ import org.newdawn.slick.state.StateBasedGame;
 
 /**
  *
- * @author dad
+ * @author James
  */
 public class MainMenu extends BasicGameState {
 
+    Ship ourShip;
     int StateID;
 
     public MainMenu(int name) {
@@ -31,6 +32,7 @@ public class MainMenu extends BasicGameState {
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+        ourShip = new Ship();
     }
 
     @Override
@@ -43,6 +45,9 @@ public class MainMenu extends BasicGameState {
         Input input = gc.getInput();
         if (input.isKeyPressed(Input.KEY_1)) {
             sbg.enterState(10);
+        }
+        if (input.isKeyPressed(Input.KEY_ESCAPE)) {
+            gc.exit();
         }
     }
 }

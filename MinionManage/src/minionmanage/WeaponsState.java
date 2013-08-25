@@ -8,7 +8,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class MainGame extends BasicGameState {
+public class WeaponsState extends BasicGameState {
 
     MinionManager minionManager;
     WorkManager workManager; //can work manager be integrated into minionManager?
@@ -19,7 +19,7 @@ public class MainGame extends BasicGameState {
         return stateID;
     }
 
-    public MainGame(int it) {
+    public WeaponsState(int it) {
         stateID = it;
     }
 
@@ -46,6 +46,9 @@ public class MainGame extends BasicGameState {
             minionManager.assignWork(1, workManager);
         } else if (input.isKeyPressed(Input.KEY_2)) {
             minionManager.assignWork(2, workManager);
+        }
+        if (input.isKeyPressed(Input.KEY_ESCAPE)) {
+            gc.exit();
         }
 
         minionManager.updateMinions(i, workManager);

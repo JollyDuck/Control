@@ -4,6 +4,7 @@
  */
 package minionmanage;
 
+import java.awt.DisplayMode;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.newdawn.slick.AppGameContainer;
@@ -17,8 +18,9 @@ import org.newdawn.slick.state.StateBasedGame;
  */
 public class StartUp extends StateBasedGame {
 
-    public static final int WIDTH = 640;
-    public static final int HEIGHT = 480;
+    //TODO: show resolution setup.
+    public static final int WIDTH = 1280;
+    public static final int HEIGHT = 1024;
 
     public StartUp(String s) {
         super(s);
@@ -28,17 +30,17 @@ public class StartUp extends StateBasedGame {
         try {
             AppGameContainer appgc;
             appgc = new AppGameContainer(new StartUp("Simple Slick Game"));
-            appgc.setDisplayMode(WIDTH, HEIGHT, false);
+            appgc.setDisplayMode(WIDTH, HEIGHT, true);
             appgc.setVSync(true);
             appgc.start();
         } catch (SlickException ex) {
-            Logger.getLogger(MainGame.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WeaponsState.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
     public void initStatesList(GameContainer gc) throws SlickException {
         this.addState(new MainMenu(1));
-        this.addState(new MainGame(10));
+        this.addState(new WeaponsState(10));
     }
 }

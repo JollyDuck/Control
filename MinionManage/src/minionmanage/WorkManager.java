@@ -7,7 +7,7 @@ package minionmanage;
 /**
  * Looks after all of the variables for the work assigned in the station.
  *
- * @author dad
+ * @author James
  */
 public class WorkManager {
 

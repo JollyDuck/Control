@@ -16,14 +16,14 @@ import org.newdawn.slick.state.StateBasedGame;
  * @author James
  */
 public class StartUp extends StateBasedGame {
-    
+
     public static final int WIDTH = 640;
     public static final int HEIGHT = 480;
-    
+
     public StartUp(String s) {
         super(s);
     }
-    
+
     public static void main(String[] args) {
         try {
             AppGameContainer appgc;
@@ -35,9 +35,10 @@ public class StartUp extends StateBasedGame {
             Logger.getLogger(MainGame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @Override
     public void initStatesList(GameContainer gc) throws SlickException {
-        this.addState(new MainGame(1));
+        this.addState(new MainMenu(1));
+        this.addState(new MainGame(10));
     }
 }

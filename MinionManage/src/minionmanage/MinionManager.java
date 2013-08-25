@@ -19,13 +19,11 @@ public class MinionManager {
         minions = array;
     }
 
-    public void assignWork(int workType) {
+    public void assignWork(int workType, WorkManager wMan) {
         boolean assignedWork = false;
         for (int i = 0; i < minions.length; i++) {
             if (minions[i].workType == 0 && !assignedWork) {
-                minions[i].workType = workType;
-                minions[i].updatePosition();
-                assignedWork = true;
+                assignedWork = wMan.assignWork(workType, minions[i]);
             }
         }
         if (!assignedWork) {
@@ -43,9 +41,9 @@ public class MinionManager {
         return c;
     }
 
-    public void updateMinions(float delta) {
+    public void updateMinions(float delta, WorkManager wMan) {
         for (int i = 0; i < minions.length; i++) {
-            minions[i].update(delta / 1000);
+            minions[i].update(delta / 1000, wMan);
         }
     }
 

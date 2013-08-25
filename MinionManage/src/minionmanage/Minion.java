@@ -11,6 +11,7 @@ package minionmanage;
 public class Minion extends Actor {
 
     //Work type = 0 == idle.
+    //Work type = 1 == Missile
     int workType;
     float workingForThisLong;
 
@@ -20,13 +21,12 @@ public class Minion extends Actor {
         initiate(); // from Actor
     }
 
-    public void update(float delta) {
-        if (workType != 0) {
-            workingForThisLong += delta;
-        }
-        if ((int) workingForThisLong >= 5) {
+    public void update(float delta, WorkManager wMan) {
+        workingForThisLong += delta;
+        if ((int) workingForThisLong >= (int)wMan.workLength(workType)) {
+            wMan.workComplete(workType);
             workType = 0;
-            workingForThisLong=0;
+            workingForThisLong = 0;
         }
         updatePosition();
     }

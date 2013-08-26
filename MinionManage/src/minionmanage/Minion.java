@@ -12,6 +12,8 @@ public class Minion extends Actor {
 
     //Work type = 0 == idle.
     //Work type = 1 == Missile
+    //Work type = 2 == Fire Missile
+    //Work type = 10 = Missile transition
     int workType;
     float workingForThisLong;
 

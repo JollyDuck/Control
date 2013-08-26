@@ -19,8 +19,8 @@ import org.newdawn.slick.state.StateBasedGame;
 public class StartUp extends StateBasedGame {
 
     //TODO: show resolution setup.
-    public static final int WIDTH = 1280;
-    public static final int HEIGHT = 1024;
+    public static final int WIDTH = 1024;
+    public static final int HEIGHT = 768;
 
     public StartUp(String s) {
         super(s);

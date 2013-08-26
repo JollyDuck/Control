@@ -3,6 +3,7 @@ package minionmanage;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
@@ -13,6 +14,7 @@ public class WeaponsState extends BasicGameState {
     MinionManager minionManager;
     WorkManager workManager; //can work manager be integrated into minionManager?
     int stateID = 0;
+    Image background;
 
     @Override
     public int getID() {
@@ -28,10 +30,12 @@ public class WeaponsState extends BasicGameState {
         Minion[] setup = {new Minion(), new Minion(), new Minion()};
         minionManager = new MinionManager(setup);
         workManager = new WorkManager();
+        background = new Image("assets/weaponsDeckBig0000.png");
     }
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+        g.drawImage(background, 0, 011);
         g.drawRect(50, 50, 50, 50);
         g.drawRect(150, 50, 50, 50);
         g.drawRect(250, 50, 50, 50);

@@ -15,12 +15,13 @@ public class WorkManager {
     int missilesLoaded;
     int missilesFired; // for Highscores
     //TODO: Have an array called missiles that holds all missile data?
-    int[] timeForEachTask;
+    int[] timeForEachTask, timeForEachTransition;
 
     public WorkManager() {
         missileCount = 5;
         missilesLoaded = 0;
         timeForEachTask = new int[]{0, 5, 3};
+        timeForEachTransition = new int[]{0,1,1};
     }
 
     /**
